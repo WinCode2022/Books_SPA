@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book catalog</title>
+    <link rel="icon" type="image/png" href="assets/21495c53bf2fa8d15d15.png" />
+  <script defer src="vendors-node_modules_css-loader_dist_runtime_api_js-node_modules_css-loader_dist_runtime_getU-f2c48c.e3ff1e5c6e74027f2e64.js"></script><script defer src="scripts.5d71427f12c28e095143.js"></script></head>
+  <body>
+    <div class="wrapper">
+      <!-- рекомендованная книга и добавление новой книги -->
+      <div class="books-list__header">
+        <div class="book-list__item book-list__item__recommendation">
+          <p class="recommendation__header">Recommended book:</p>
+          <div class="book-list__item__img-container">
+            <img
+              alt="No image. Try entering the title of the book in another language"
+              class="thumbnail recommendation__header__thumbnail"
+              id="thumbnail"
+            />
+          </div>
+          <p
+            class="book-list__item__name recommendation__book-list__item__name"
+          ></p>
+          <p
+            class="book-list__item__author recommendation__book-list__item__author"
+          ></p>
+          <p
+            class="book-list__item__year recommendation__book-list__item__year"
+          ></p>
+          <p
+            class="book-list__item__rating recommendation__book-list__item__rating"
+          ></p>
+          <p
+            class="book-list__item__isbn recommendation__book-list__item__isbn"
+          ></p>
+        </div>
+        <form class="book-list__item book-list__item__add">
+          <p class="add__header">Add new book:</p>
+          <input
+            maxlength="100"
+            placeholder="title (max 100 characters)"
+            type="text"
+            class="book-list__item__add__name"
+            name="name"
+            required
+          />
+          <input
+            maxlength="100"
+            placeholder="author"
+            type="text"
+            class="book-list__item__add__author"
+            name="author"
+            required
+          />
+          <input
+            type="number"
+            placeholder="year"
+            class="book-list__item__add__year"
+            name="year"
+            min="1800"
+          />
+          <input
+            placeholder="rating"
+            type="number"
+            class="book-list__item__add__rating"
+            name="rating"
+            min="1"
+            max="10"
+          />
+          <input
+            placeholder="ISBN (13 numbers)"
+            type="text"
+            class="book-list__item__add__isbn"
+            name="isbn"
+            minlength="13"
+            maxlength="17"
+            pattern="^(?=(?:\D*\d){10}(?:(?:\D*\d){3})?$)[\d-]+$"
+          />
+
+          <button class="add__button" type="submit">Add</button>
+        </form>
+      </div>
+      <!-- разделитель -->
+      <div class="separator"></div>
+      <!-- кнопка сортировки -->
+      <div class="sorting-button__wrapper">
+        <div class="sorting-button__container">
+          <button type="button" class="sorting-button">
+            Sorting by:&nbsp
+            <div class="selected-sorting-type">year</div>
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
+              <path d="M12 15.4 6 9.4 7.4 8 12 12.6 16.6 8 18 9.4Z" />
+            </svg>
+          </button>
+          <ul class="sorting__list">
+            <li data-sorting="year">year</li>
+            <li data-sorting="rating">rating</li>
+            <li data-sorting="author">author</li>
+          </ul>
+        </div>
+      </div>
+      <!-- контейнер с книгами -->
+      <div class="books-list">
+        <div class="books-list__container"></div>
+      </div>
+    </div>
+    <!-- модальное окно: редактирование книги -->
+    <div class="hystmodal" id="myModal" aria-hidden="true">
+      <div class="hystmodal__wrap">
+        <div class="hystmodal__window" role="dialog" aria-modal="true">
+          <form class="modal__edit-card">
+            <button type="button" data-hystclose class="hystmodal__close">
+              Закрыть
+            </button>
+            <p class="add__header">Edit book:</p>
+            <div class="description-input">
+              <p>name:</p>
+              <input
+                maxlength="100"
+                placeholder="title (max 100 char.)"
+                type="text"
+                class="modal-edit__name"
+                name="name"
+                required
+              />
+            </div>
+            <div class="description-input">
+              <p>author:</p>
+              <input
+                maxlength="100"
+                placeholder="author"
+                type="text"
+                class="modal-edit__author"
+                name="author"
+                required
+              />
+            </div>
+            <div class="description-input">
+              <p>year:</p>
+              <input
+                type="number"
+                placeholder="year"
+                class="modal-edit__year"
+                name="year"
+                min="1800"
+              />
+            </div>
+
+            <div class="description-input">
+              <p>rating:</p>
+              <input
+                placeholder="rating"
+                type="number"
+                class="modal-edit__rating"
+                name="rating"
+                min="1"
+                max="10"
+              />
+            </div>
+
+            <div class="description-input">
+              <p>ISBN (13 numbers):</p>
+              <input
+                placeholder="ISBN (13 numbers)"
+                type="text"
+                class="modal-edit__isbn"
+                name="isbn"
+                minlength="13"
+                maxlength="17"
+                pattern="^(?=(?:\D*\d){10}(?:(?:\D*\d){3})?$)[\d-]+$"
+              />
+            </div>
+            <button type="submit" class="edit-card-button">Edit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- лоадер -->
+    <div id="page-preloader" class="preloader">
+      <div class="loader"></div>
+    </div>
+    <!-- ошибка - нет книги с таким названием -->
+    <div class="error-no-books">
+      <div class="error-text">There are no books with this title</div>
+    </div>
+  </body>
+</html>

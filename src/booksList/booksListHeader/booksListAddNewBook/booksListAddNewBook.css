@@ -1,0 +1,44 @@
+.books-list__header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30px;
+ 
+
+}
+
+.add__header {
+  font-size: 26px;
+  font-weight: bold;
+  color: rgb(73, 73, 73);
+}
+
+.book-list__item__add {
+  width: 260px;
+  background-color: #f1f8e9;
+}
+
+.add__button {
+  height: 30px;
+  box-shadow: 0 16px 24px 2px rgba(33, 37, 41, 0.02),
+    0 6px 30px 5px rgba(33, 37, 41, 0.04), 0 8px 10px -5px rgba(33, 37, 41, 0.1);
+  border-radius: 5px;
+  background-color: #b2dfdb;
+  font-size: 17px;
+  transition: 0.2s;
+}
+.add__button:hover {
+  transform: scale(1.05);
+  transition: 0.2s;
+  background-color: rgb(39, 162, 152);
+}
+.book-list__item__add input {
+  height: 25px;
+  padding: 0 10px;
+  font-size: 15px;
+  background-color: #fafbf8;
+}
+.body{
+  font-family: 'Poppins', sans-serif;
+}

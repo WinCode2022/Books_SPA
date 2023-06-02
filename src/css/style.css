@@ -1,0 +1,23 @@
+@import "../booksList/booksList.css";
+@import "./nullstyle.css";
+@import "../errorNoBooks/errorNoBooks.css";
+@import "../booksList/sorting/sorting.css";
+@import "../booksList/booksListHeader/booksListAddNewBook/booksListAddNewBook.css";
+@import "../booksList/booksListHeader/booksListRecommendation/booksListRecommendation.css";
+@import "../booksList/modalEdit/modalEdit.css";
+@import "../preloader/preloader.css";
+
+body {
+  height: 100%;
+  background-color: aliceblue;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1024px;
+}

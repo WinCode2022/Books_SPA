@@ -1,0 +1,73 @@
+.sorting-button__wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.sorting-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  height: 60px;
+  border-radius: 5px;
+  box-shadow: 0 16px 24px 2px rgba(33, 37, 41, 0.02),
+    0 6px 30px 5px rgba(33, 37, 41, 0.04), 0 8px 10px -5px rgba(33, 37, 41, 0.1);
+  cursor: pointer;
+  background-color: #e3a1e4a9;
+  font-size: 20px;
+  transition: 0.2s;
+}
+
+.sorting-button__container:hover .sorting-button{
+  transform: scale(1.1);
+  transition: 0.2s;
+}
+
+.sorting-button:hover + .sorting__list,
+.sorting__list:hover {
+  visibility: visible;
+  transition: 0.2s;
+}
+
+.sorting-button__container {
+  position: relative;
+}
+.sorting__list {
+  box-shadow: 0 16px 24px 2px rgba(33, 37, 41, 0.02),
+    0 6px 30px 5px rgba(33, 37, 41, 0.04), 0 8px 10px -5px rgba(33, 37, 41, 0.1);
+  border: 1px solid #fbb3a6a9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+  background-color: #e3e3e3;
+  min-width: 120px;
+  border-radius: 5px;
+  font-size: 20px;
+  visibility: hidden;
+  padding: 10px 0;
+  position: absolute;
+  width: 100%;
+}
+
+.sorting__list li:not(:first-child) {
+  margin-top: 15px;
+}
+
+.sorting__list li:hover {
+  background-color: #73d7e436;
+  cursor: pointer;
+}
+
+.sorting__list li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: black;
+}
+

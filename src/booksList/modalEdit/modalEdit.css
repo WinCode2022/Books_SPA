@@ -1,0 +1,34 @@
+.modal-edit {
+  position: relative;
+  width: 360px;
+  height: 550px;
+}
+
+.modal__edit-card {
+  background-color: #f1f8e9;
+  width: 360px;
+  height: 550px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.edit-card-button {
+  height: 30px;
+  box-shadow: 0 16px 24px 2px rgb(33 37 41 / 2%),
+    0 6px 30px 5px rgb(33 37 41 / 4%), 0 8px 10px -5px rgb(33 37 41 / 10%);
+  border-radius: 5px;
+  background-color: #b2dfdb;
+  font-size: 17px;
+  transition: 0.2s;
+}
+
+.modal__edit-card input {
+  background-color: #fafbf8;
+  height: 30px;
+  font-size: 15px;
+  width: 100%;
+}
+
+
